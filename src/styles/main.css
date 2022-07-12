@@ -1,0 +1,117 @@
+.navbar {
+  width: 100vw;
+  height: 10vh;
+  position: relative;
+  background-color: #f6f6f6;
+  color: #2d2d2d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.navbar__brand {
+  font-size: 1.6em;
+}
+
+.navbar__navigation-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar__navigation-button {
+  font-weight: 500;
+  margin-left: 30px;
+}
+
+.navbar__button {
+  display: none;
+}
+
+.navbar__button-icon {
+  height: 3px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #2d2d2d;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.navbar__slide-menu {
+  display: none;
+  height: 90vh;
+  width: 80vw;
+  position: absolute;
+  background-color: #e8e8e8;
+  top: 10vh;
+  right: -81vw;
+  -webkit-transition: right 0.4s;
+  transition: right 0.4s;
+}
+
+.navbar--dark-theme {
+  background-color: #3f3f3f;
+  color: #f8f8f8;
+}
+
+@media (max-width: 430px) {
+  .navbar {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .navbar__brand {
+    font-size: 1.3em;
+  }
+  .navbar__navigation-div {
+    display: none;
+  }
+  .navbar__button {
+    height: 22px;
+    width: 26px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .navbar__button:hover .navbar__button-icon:nth-child(1) {
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .navbar__button:hover .navbar__button-icon:nth-child(2) {
+    width: 0;
+  }
+  .navbar__button:hover .navbar__button-icon:nth-child(3) {
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+}
+/*# sourceMappingURL=main.css.map */

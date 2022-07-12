@@ -1,0 +1,111 @@
+@import '../abstracts/mixins';
+@import '../abstracts/variable';
+
+.navbar {
+    width: 100vw;
+    height: 10vh;
+    position: relative;
+    background-color: $light-background-theme;
+    color: $light-text-color-theme;
+    @include flex(space-between, center);
+    @include paddingHorizontal(30px);
+ 
+    &__brand {
+        font-size: 1.6em;
+    }
+
+    &__navigation-div {
+        @include flex(flex-end, center);
+    }
+
+    &__navigation-button {
+        font-weight: 500;
+        margin-left: 30px;
+    }
+
+    &__button {
+        display: none;
+    }
+
+    &__button-icon {
+        height: 3px;
+        width: 100%;
+        border-radius: 8px;
+        background-color: $light-text-color-theme;
+        transition: transform 0.3s;
+    }
+
+    &__slide-menu {
+        display: none;
+        height: 90vh;
+        width: 80vw;
+        position: absolute;
+        background-color: rgb(232, 232, 232);
+        top: 10vh;
+        right: -81vw;
+        transition: right 0.4s;
+    }
+}
+
+.navbar--dark-theme {
+    background-color: $dark-background-theme;
+    color: $dark-text-color-theme;
+}
+
+
+
+
+
+
+
+// media query for tablet screens
+@include tablet {
+    
+}
+
+
+
+
+
+
+// media query for mobile screens
+@include mobile {
+    .navbar {
+
+        @include paddingHorizontal(15px);
+
+        &__brand {
+            font-size: 1.3em;
+        }
+
+        &__navigation-div {
+            display: none;
+        }
+
+        &__button {
+            height: 22px;
+            width: 26px;
+            flex-direction: column;
+            @include flex(space-between, center);
+        }
+
+        &__button:hover &__button-icon {
+            &:nth-child(1) {
+                 transform-origin: left;
+                 transform: rotate(45deg); 
+            }
+            &:nth-child(2) {
+                 width: 0; 
+            }
+            &:nth-child(3) {
+                transform-origin: left;
+                transform: rotate(-45deg); 
+           }
+        }
+
+        // &__slide-menu:hover {
+        //     display: block;
+        //     right: 0;
+        // }
+    }
+}
